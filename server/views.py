@@ -51,7 +51,6 @@ def index(request):
 def fetch_pdf(request):
     page_url = request.GET.get("url")
     title, filename, pdf_url = get_acs_stuff(page_url)
-    print title, filename, pdf_url
     f = download_file(filename, pdf_url)
     article = Article(title=title, filename=filename)
     article.pdf = File(f)
