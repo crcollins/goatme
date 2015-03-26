@@ -41,6 +41,7 @@ def index(request):
     with open("server/bookmarklet.js", 'r') as f:
         text = f.read()
 
+    text = text.replace("{{ SERVER }}", request.META['HTTP_HOST'])
     bookmarklet = "javascript:" + text.replace('\n', '')
     d = {
         "bookmarklet": bookmarklet,

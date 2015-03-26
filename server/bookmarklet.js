@@ -1,5 +1,5 @@
 var xmlhttp = new XMLHttpRequest();
-xmlhttp.open('GET','http://localhost:4000/fetch?url='+document.URL, true);
+xmlhttp.open('GET','http://{{ SERVER }}/fetch?url='+document.URL, true);
 xmlhttp.send();
 xmlhttp.onreadystatechange=function()
   {
