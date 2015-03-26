@@ -3,3 +3,4 @@ env/*
 db.sqlite3
 *.sublime-*
 project/secret_key.py
+project/media/articles/*
