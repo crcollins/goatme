@@ -38,7 +38,14 @@ class StringIO(object):
 
 
 def index(request):
-    return HttpResponse("Hello World!")
+    with open("server/bookmarklet.js", 'r') as f:
+        text = f.read()
+
+    bookmarklet = "javascript:" + text.replace('\n', '')
+    d = {
+        "bookmarklet": bookmarklet,
+    }
+    return render(request, "server/index.html", d)
 
 
 def fetch_pdf(request):
